@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
+import {from, Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +14,13 @@ export class NosApiService {
     }
   }
 
+  isConnected() {
+    return this.nos;
+  }
+
   getAddress(): Observable<any> {
     if (this.nos) {
-      return this.nos.getAddress();
+      return from(this.nos.getAddress());
     }
   }
 
@@ -35,11 +39,11 @@ export class NosApiService {
 
   invokeMethod(scriptHash: string, operation: string, args?: string[]) {
     if (this.nos) {
-      this.nos.testInvoke({scriptHash, operation, args});
+      from(this.nos.testInvoke({scriptHash, operation, args}));
     }
   }
 
   claimGas(): Observable<string> {
-    return this.nos.claimGas();
+    return from(this.nos.claimGas());
   }
 }

@@ -15,6 +15,6 @@ export class HeaderComponent implements OnInit {
   }
 
   get address() {
-    return this._poolsService.address;
+      return this._poolsService.address || '-';
   }
 }

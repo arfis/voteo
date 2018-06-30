@@ -1,4 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+import {PoolsService} from '../../shared/pools/pools.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +11,7 @@ export class ProfileComponent implements OnInit {
   @ViewChild('cryptoAddressElement')
   cryptoAddressElement;
 
-  constructor() { }
+  constructor(private _poolsService: PoolsService) { }
 
   ngOnInit() {
   }
@@ -22,7 +23,7 @@ export class ProfileComponent implements OnInit {
   }
 
   get cryptoAddress() {
-    return 'AWPqLQHUARcjrjebmPGbfBh8ZRLmcEhhta';
+    return this._poolsService.address || '-';
   }
 
   get address() {

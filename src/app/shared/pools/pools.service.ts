@@ -10,7 +10,11 @@ export class PoolsService {
   address;
 
   constructor(private _nosService: NosApiService) {
-    this.address = _nosService.getAddress();
+    if (_nosService.isConnected()) {
+      _nosService.getAddress().subscribe(
+        address => this.address = address
+      );
+    }
   }
 
   public createPool(poolParams: any) {
