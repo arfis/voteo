@@ -1,15 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
 @import './lib/styles/_font.scss';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'lib/styles/_colors.scss';
 
-body { font-family:BrochaLight !important; }
-h1 { font-weight:bold; }
-em { font-style:italic; }
+html, body {
+  height: 100%;
+  overflow-x: hidden
+}
+
+body {
+  font-family: BrochaLight !important;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
 
 .voteo-bold {
-  font-family:BrochaRegular !important;
+  font-family: BrochaRegular !important;
+}
+
+.voteo-button {
+  cursor: pointer;
+  border: 1px solid $color-bitcoach-blue;
+  border-radius: 2px;
+  box-shadow: 1px $color-shadow;
+  color: $color-white;
+  background: linear-gradient(to right, $color-bitcoach-lightBlue, $color-bitcoach-blue);
+
+  &:hover {
+    color: $color-bitcoach-blue;
+    background: linear-gradient(to right, $color-white , $color-bitcoach-extralightblue);
+  }
 }
 
 strong em {
-  font-weight:bold;
-  font-style:italic;
+  font-weight: bold;
+  font-style: italic;
 }

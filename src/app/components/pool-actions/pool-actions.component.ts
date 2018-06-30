@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-pool-actions',
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PoolActionsComponent implements OnInit {
 
-
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  createPool() {
+    this.router.navigate(['/create']);
   }
 
   get numberOfPools() {

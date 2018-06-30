@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {PoolsService} from '../../shared/pools/pools.service';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +8,13 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  address = 'AWPqLQHUARcjrjebmPGbfBh8ZRLmcEhhta';
-
-  constructor() {
+  constructor(private _poolsService: PoolsService) {
   }
 
   ngOnInit() {
   }
 
+  get address() {
+    return this._poolsService.address;
+  }
 }

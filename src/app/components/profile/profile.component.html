@@ -10,7 +10,8 @@
 
   <div class="information">
     <div class="detail">
-      <div class="row">{{cryptoAddress}}</div>
+      <input #cryptoAddressElement class="row"
+             (click)="copyToClipboard()" [(ngModel)]="cryptoAddress">
       <div class="row">{{address}}</div>
       <div class="row">{{contacts}}</div>
       <div class="row">{{email}}</div>

@@ -3,6 +3,7 @@ import {PageNotFoundComponent} from './pages/page-not-found/page-not-found.compo
 import {HomePageComponent} from './pages/home-page/home-page.component';
 import {PageSkeletComponent} from './pages/page-skelet/page-skelet.component';
 import {PoolActionsComponent} from './components/pool-actions/pool-actions.component';
+import {NewQuestionPageComponent} from './pages/new-question-page/new-question-page.component';
 
 export const appRoutes: Routes = [
   {
@@ -12,6 +13,10 @@ export const appRoutes: Routes = [
       {
         path: '',
         component: PoolActionsComponent,
+      },
+      {
+        path: 'create',
+        component: NewQuestionPageComponent,
       }
     ]
     // data: { title: 'Heroes List' }

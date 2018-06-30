@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  @ViewChild('cryptoAddressElement')
+  cryptoAddressElement;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  copyToClipboard() {
+    this.cryptoAddressElement.nativeElement.select();
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
   }
 
   get cryptoAddress() {

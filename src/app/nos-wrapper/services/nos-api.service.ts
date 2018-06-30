@@ -9,11 +9,15 @@ export class NosApiService {
   nos;
 
   constructor() {
-    this.nos = (window as any).NOS.V1;
+    if ((window as any).NOS) {
+      this.nos = (window as any).NOS.V1;
+    }
   }
 
   getAddress(): Observable<any> {
-    return this.nos.getAddress();
+    if (this.nos) {
+      return this.nos.getAddress();
+    }
   }
 
   getBalance(asset: string, addres?: string) {
@@ -30,7 +34,9 @@ export class NosApiService {
   }
 
   invokeMethod(scriptHash: string, operation: string, args?: string[]) {
-    this.nos.testInvoke({scriptHash, operation, args});
+    if (this.nos) {
+      this.nos.testInvoke({scriptHash, operation, args});
+    }
   }
 
   claimGas(): Observable<string> {

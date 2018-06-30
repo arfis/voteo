@@ -16,6 +16,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PoolActionsComponent } from './components/pool-actions/pool-actions.component';
 import { PoolActionElementComponent } from './components/pool-action-element/pool-action-element.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NewQuestionPageComponent } from './pages/new-question-page/new-question-page.component';
+import {MatButtonModule, MatSlideToggleModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 export function HttpLoaderFactory(http: HttpClient) {
   // return new TranslateHttpLoader(http);
@@ -31,13 +35,19 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     ProfileComponent,
     PoolActionsComponent,
-    PoolActionElementComponent
+    PoolActionElementComponent,
+    NewQuestionPageComponent
   ],
   imports: [
     NgbModule.forRoot(),
+    MatSlideToggleModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    ReactiveFormsModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    FormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

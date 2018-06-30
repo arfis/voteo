@@ -9,12 +9,27 @@
     }
   },
   "actions" : {
-    "viewAll": "view all"
+    "viewAll": "view all",
+    "submit": "submit"
   },
   "pools": {
     "createNew": "Create a new pool",
     "or": "or",
-    "noPending": "there are no pending",
-    "public": "There are {{numberOfPools}} live public pools"
+    "noPending": "there are no pending pools",
+    "public": "There are {{numberOfPools}} live public pools",
+    "types" : {
+      "create" : "Create pool",
+      "vote": "Vote",
+      "public": "Public pools"
+    },
+    "newPool": "Create new pool",
+    "newQuestion": "New question",
+    "create": {
+      "openEnded": "closed-ended",
+      "openEndedHint": "(set possible answers)",
+      "multiple": "multiple choices",
+      "option": "option",
+      "addOption": "Add option"
+    }
   }
 }

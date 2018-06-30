@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-pool-action-element',
@@ -6,6 +6,8 @@ import {Component, HostListener, OnInit} from '@angular/core';
   styleUrls: ['./pool-action-element.component.scss']
 })
 export class PoolActionElementComponent implements OnInit {
+
+  @Input() label;
 
   hovered;
 
@@ -22,10 +24,6 @@ export class PoolActionElementComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
-  get poolName() {
-    return 'Create pool';
   }
 
 }
