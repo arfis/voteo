@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import './lib/styles/_font.scss';
+
+body { font-family:BrochaLight !important; }
+h1 { font-weight:bold; }
+em { font-style:italic; }
+
+.voteo-bold {
+  font-family:BrochaRegular !important;
+}
+
+strong em {
+  font-weight:bold;
+  font-style:italic;
+}

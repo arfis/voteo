@@ -2,6 +2,7 @@ import {Routes} from '@angular/router';
 import {PageNotFoundComponent} from './pages/page-not-found/page-not-found.component';
 import {HomePageComponent} from './pages/home-page/home-page.component';
 import {PageSkeletComponent} from './pages/page-skelet/page-skelet.component';
+import {PoolActionsComponent} from './components/pool-actions/pool-actions.component';
 
 export const appRoutes: Routes = [
   {
@@ -9,8 +10,8 @@ export const appRoutes: Routes = [
     component: PageSkeletComponent,
     children: [
       {
-        path: 'home',
-        component: HomePageComponent,
+        path: '',
+        component: PoolActionsComponent,
       }
     ]
     // data: { title: 'Heroes List' }

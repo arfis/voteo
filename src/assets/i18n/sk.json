@@ -1,0 +1,14 @@
+{
+  "header": {
+    "title": ".voteo",
+    "profile": "my profile",
+    "contactList": "contact list",
+    "about": "about",
+    "actions": {
+      "logout": "Logout",
+    }
+  },
+  "actions" : {
+    "viewAll": "View All"
+  }
+}

@@ -1,0 +1,19 @@
+<div class="wrapper">
+
+  <div class="profile-picture">
+    <img src="https://pbs.twimg.com/profile_images/934317901745655809/giHHc1bR_400x400.jpg">
+  </div>
+
+  <div class="name">
+    {{name}} <span *ngIf="isValidated"><img class="validated" src="assets/img/check.png"></span>
+  </div>
+
+  <div class="information">
+    <div class="detail">
+      <div class="row">{{cryptoAddress}}</div>
+      <div class="row">{{address}}</div>
+      <div class="row">{{contacts}}</div>
+      <div class="row">{{email}}</div>
+    </div>
+  </div>
+</div>

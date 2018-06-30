@@ -1,0 +1,20 @@
+{
+  "header": {
+    "title": ".voteo",
+    "profile": "my profile",
+    "contactList": "contact list",
+    "about": "about",
+    "actions": {
+      "logout": "Logout"
+    }
+  },
+  "actions" : {
+    "viewAll": "view all"
+  },
+  "pools": {
+    "createNew": "Create a new pool",
+    "or": "or",
+    "noPending": "there are no pending",
+    "public": "There are {{numberOfPools}} live public pools"
+  }
+}
