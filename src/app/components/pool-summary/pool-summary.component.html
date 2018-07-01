@@ -1,25 +1,30 @@
-<div class="header">{{'pools.newPool' | translate}}</div>
-<div class="title voteo-bold">{{'pools.summary' | translate}}</div>
-<div class="voteo-table">
-  <div class="voteo-row">
-    <span class="column key">{{'pools.create.name' | translate}}</span>
-    <span class="column value">{{name}}</span>
-  </div>
-  <div class="voteo-row">
-    <span class="column key">{{'pools.create.openEnded' | translate}}</span>
-    <span class="column value">{{openEnded}}</span>
-  </div>
-  <div class="voteo-row">
-    <span class="column key">{{'pools.create.multiple' | translate}}</span>
-    <span class="column value">{{multiple}}</span>
-  </div>
-  <div *ngFor="let option of options; let i=index" class="voteo-row">
-    <span class="column key">{{'pools.create.option' | translate}} {{i}}</span>
-    <span class="column value">{{option.label}}</span>
-  </div>
-</div>
+<div class="wrapper">
+  <div class="header">{{'pools.newPool' | translate}}</div>
 
-<div class="button-wrapper">
-  <button (click)="back()" class="voteo-button">{{'actions.back' | translate}}</button>
-  <button (click)="submit()" class="voteo-button">{{'actions.submit' | translate}}</button>
+  <div class="title voteo-bold">{{'pools.summary' | translate}}</div>
+  <div class="voteo-table">
+    <ng-container *ngFor="let question of pool">
+      <div class="highlight voteo-row">
+        <span class="column key">{{'pools.create.name' | translate}}</span>
+        <span class="column value">{{question.name}}</span>
+      </div>
+      <div class="voteo-row">
+        <span class="column key">{{'pools.create.openEnded' | translate}}</span>
+        <span class="column value">{{question.openEnded}}</span>
+      </div>
+      <div class="voteo-row">
+        <span class="column key">{{'pools.create.multiple' | translate}}</span>
+        <span class="column value">{{question.multiple}}</span>
+      </div>
+      <div *ngFor="let option of question.options; let i=index" class="voteo-row">
+        <span class="column key">{{'pools.create.option' | translate}} {{i}}</span>
+        <span class="column value">{{option.label}}</span>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="button-wrapper">
+    <button (click)="back()" class="voteo-button">{{'actions.back' | translate}}</button>
+    <button (click)="submit()" class="voteo-button">{{'actions.submit' | translate}}</button>
+  </div>
 </div>

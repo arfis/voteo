@@ -1,6 +1,12 @@
-<div class="wrapper">
+
   <app-new-question-page *ngIf="!waitingValidation; else summary"
-                         (onSubmit)="setUpPool($event)"></app-new-question-page>
+                         [question]="currentQuestion"
+                         [numberOfQuestions]="numberOfQuestions"
+                         [currentQuestionIndex]="currentIndex"
+                         (afterNextQuestionPressed)="setNextQuestion($event)"
+                         (afterPreviousQuestionPressed)="setPreviousQuestion($event)"
+                         (afterClickOnRemove)="removeCurrentQuestion($event)"
+                         (onSubmit)="continueToSummary($event)"></app-new-question-page>
 
   <ng-template #summary>
     <app-pool-summary *ngIf="waitingValidation"
@@ -8,4 +14,3 @@
                       (onSubmitPressed)="createPool()"
                       (onBackPressed)="goToEdit()"></app-pool-summary>
   </ng-template>
-</div>

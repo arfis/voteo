@@ -13,6 +13,9 @@ mat-slide-toggle {
   color: $color-bitcoach-blue;
 }
 
+.wrapper {
+  margin: 0px 20px;
+}
 .parameters {
   .param {
     padding: 10px 30px;
@@ -41,8 +44,35 @@ mat-slide-toggle {
   align-items: center;
   display: flex;
   width: 100%;
+
+  button {
+    margin: 5px;
+  }
 }
 
 .add-option {
   font-size: 12px;
 }
+
+.left {
+  font-size:32px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.right {
+  font-size:32px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+}
+.content {
+  position: relative;
+}
+

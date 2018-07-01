@@ -15,18 +15,32 @@
   font-family: BrochaBold;
 }
 
+.highlight .key {
+  color: $color-white !important;
+}
+
+.highlight {
+  color: $color-white !important;
+  background-color: $color-bitcoach-blue;
+
+  &:first-child {
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px;
+  }
+}
+
 .value {
   text-align: center;
 }
 
 .header {
   width: 100%;
-  display:block;
+  display: block;
   position: relative;
 }
 
 .button-wrapper {
-  padding : 10px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;

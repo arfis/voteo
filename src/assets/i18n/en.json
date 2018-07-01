@@ -12,13 +12,15 @@
     "viewAll": "view all",
     "submit": "submit",
     "continue": "continue",
-    "back": "back"
+    "back": "back",
+    "delete": "remove"
   },
   "pools": {
     "createNew": "Create a new pool",
     "or": "or",
     "noPending": "there are no pending pools",
     "public": "There are {{numberOfPools}} live public pools",
+    "question": "Question",
     "types" : {
       "create" : "Create pool",
       "vote": "Vote",

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormArray, FormBuilder, Validators} from '@angular/forms';
 import {PoolsService} from '../../shared/pools/pools.service';
 
@@ -7,15 +7,49 @@ import {PoolsService} from '../../shared/pools/pools.service';
   templateUrl: './new-question-page.component.html',
   styleUrls: ['./new-question-page.component.scss']
 })
-export class NewQuestionPageComponent implements OnInit {
+export class NewQuestionPageComponent implements OnChanges {
 
   @Output()
   onSubmit = new EventEmitter();
+  @Output()
+  afterNextQuestionPressed = new EventEmitter<any>();
+  @Output()
+  afterPreviousQuestionPressed = new EventEmitter();
+  @Output()
+  afterClickOnRemove = new EventEmitter<number>();
+
+  @Input()
+  question;
+  @Input()
+  numberOfQuestions;
+  @Input()
+  currentQuestionIndex;
 
   createQuestionForm;
 
-  constructor(private fb: FormBuilder,
-              private _poolsService: PoolsService) {
+  constructor(private fb: FormBuilder) {
+    this.initForm();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.question) {
+      console.log('question', this.question);
+      this.initForm();
+
+      if (this.question) {
+
+        if (this.question.options) {
+          for (const option of this.question.options) {
+           this.addOption();
+          }
+        }
+
+        this.createQuestionForm.patchValue(this.question);
+      }
+    }
+  }
+
+  initForm() {
     this.createQuestionForm = this.fb.group({
       'name': [''],
       'openEnded': [false],
@@ -24,21 +58,37 @@ export class NewQuestionPageComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
-
-  addOption() {
+  addOption(label = '') {
     const option = this.fb.group({
-      'label': ['', Validators.required]
+      'label': [label, Validators.required]
     });
     this.options.push(option);
   }
 
   createPool({value}) {
-    this.onSubmit.emit(value)
+    this.onSubmit.emit(value);
   }
 
+  getNextQuestion({value}) {
+    this.afterNextQuestionPressed.next(value);
+  }
+
+  getPreviousQuestion({value}) {
+    this.afterPreviousQuestionPressed.next(value);
+  }
+
+  removeCurrentQuestion() {
+    this.afterClickOnRemove.next(this.currentQuestionIndex);
+  }
+
+  get hasMoreQuestions() {
+    return this.currentQuestionIndex < this.numberOfQuestions - 1;
+  }
   get options() {
     return this.createQuestionForm.get('options') as FormArray;
+  }
+
+  get operation() {
+    return this.currentQuestionIndex < this.numberOfQuestions ? '>' : '+';
   }
 }
