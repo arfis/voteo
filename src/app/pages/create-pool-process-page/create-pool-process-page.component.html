@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <app-new-question-page *ngIf="!waitingValidation; else summary"
+                         (onSubmit)="setUpPool($event)"></app-new-question-page>
+
+  <ng-template #summary>
+    <app-pool-summary *ngIf="waitingValidation"
+                      [pool]="pool"
+                      (onSubmitPressed)="createPool()"
+                      (onBackPressed)="goToEdit()"></app-pool-summary>
+  </ng-template>
+</div>

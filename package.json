@@ -1,13 +1,15 @@
 {
   "name": "voteo",
   "version": "0.0.0",
+  "homepage": "handsomeio.com/voteo",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "ng build --base-href=/voteo; chmod -R 777 dist/; scp -r dist/* root@handsomeio.com:/var/www/html/voteo/"
   },
   "private": true,
   "dependencies": {

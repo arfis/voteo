@@ -10,7 +10,9 @@
   },
   "actions" : {
     "viewAll": "view all",
-    "submit": "submit"
+    "submit": "submit",
+    "continue": "continue",
+    "back": "back"
   },
   "pools": {
     "createNew": "Create a new pool",
@@ -25,11 +27,13 @@
     "newPool": "Create new pool",
     "newQuestion": "New question",
     "create": {
+      "name": "question name",
       "openEnded": "closed-ended",
       "openEndedHint": "(set possible answers)",
       "multiple": "multiple choices",
       "option": "option",
       "addOption": "Add option"
-    }
+    },
+    "summary": "Pool summary"
   }
 }

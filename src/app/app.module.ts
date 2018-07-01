@@ -20,6 +20,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NewQuestionPageComponent } from './pages/new-question-page/new-question-page.component';
 import {MatButtonModule, MatSlideToggleModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PoolSummaryComponent } from './components/pool-summary/pool-summary.component';
+import { CreatePoolProcessPageComponent } from './pages/create-pool-process-page/create-pool-process-page.component';
+import { SplashScreenPageComponent } from './pages/splash-screen-page/splash-screen-page.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   // return new TranslateHttpLoader(http);
@@ -36,7 +39,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProfileComponent,
     PoolActionsComponent,
     PoolActionElementComponent,
-    NewQuestionPageComponent
+    NewQuestionPageComponent,
+    PoolSummaryComponent,
+    CreatePoolProcessPageComponent,
+    SplashScreenPageComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -45,7 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatButtonModule,
     ReactiveFormsModule,
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { useHash: true }),
     HttpClientModule,
     FormsModule,
     TranslateModule.forRoot({

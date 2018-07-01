@@ -1,0 +1,37 @@
+@import '../../../lib/styles/colors';
+
+.column {
+  display: inline-block;
+  width: 50%;
+  border-right: 1px solid $color-bitcoach-border;
+
+  &:last-child {
+    border-right: 0px;
+  }
+}
+
+.key {
+  color: $color-bitcoach-blue;
+  font-family: BrochaBold;
+}
+
+.value {
+  text-align: center;
+}
+
+.header {
+  width: 100%;
+  display:block;
+  position: relative;
+}
+
+.button-wrapper {
+  padding : 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button:nth-child(n-1) {
+    margin-left: 10px;
+  }
+}

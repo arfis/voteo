@@ -31,15 +31,16 @@
   position: relative;
   width: 90%;
   margin: auto;
-  border: 1px solid $color-bitcoach-gray;
+  border: 1px solid $color-bitcoach-border;
   border-radius: 10px;
 
   input {
+    border-radius: 10px 10px 0px 0px;
     width: 100%;
     text-align:left;
     border: 0px;
     user-select: none;
-    border-bottom: 1px solid $color-bitcoach-gray;
+    border-bottom: 1px solid $color-bitcoach-border;
     outline: none !important;
     cursor: pointer;
   }
@@ -50,7 +51,7 @@
   padding: 5px;
   text-align: left;
   margin: auto;
-  border-bottom: 1px solid $color-bitcoach-gray;
+  border-bottom: 1px solid $color-bitcoach-border;
   word-wrap: break-word;
 
   &:last-child {

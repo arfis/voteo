@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormArray, FormBuilder, Validators} from '@angular/forms';
 import {PoolsService} from '../../shared/pools/pools.service';
 
@@ -9,14 +9,17 @@ import {PoolsService} from '../../shared/pools/pools.service';
 })
 export class NewQuestionPageComponent implements OnInit {
 
+  @Output()
+  onSubmit = new EventEmitter();
+
   createQuestionForm;
 
   constructor(private fb: FormBuilder,
               private _poolsService: PoolsService) {
     this.createQuestionForm = this.fb.group({
       'name': [''],
-      'openEnded': [''],
-      'multiple': [''],
+      'openEnded': [false],
+      'multiple': [false],
       'options': this.fb.array([])
     });
   }
@@ -32,7 +35,7 @@ export class NewQuestionPageComponent implements OnInit {
   }
 
   createPool({value}) {
-    this._poolsService.createPool(value);
+    this.onSubmit.emit(value)
   }
 
   get options() {
