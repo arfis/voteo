@@ -6,13 +6,12 @@
           .voteo
         </span>
       </div>
-
-      <span routerLink="/profile" class="item">{{'header.profile' | translate}}</span>
+      <!--<span  class="item">{{'header.profile' | translate}}</span>-->
       <span routerLink="/contacts" class="item">{{'header.contactList' | translate}}</span>
       <span routerLink="/about" class="item">{{'header.about' | translate}}<span class="gold">{{'header.title' | translate}}</span></span>
     </div>
 
-    <div class="col-4">
+    <div routerLink="/profile" class="col-4">
       <div class="user">
         <span class="gold">Kamil bitcoach</span>
         <span class="address">{{address}}</span>

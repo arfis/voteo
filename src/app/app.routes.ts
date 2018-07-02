@@ -8,6 +8,8 @@ import {PoolsPageComponent} from './pages/pools-page/pools-page.component';
 import {PublicPoolsPageComponent} from './pages/public-pools-page/public-pools-page.component';
 import {PoolFillPageComponent} from './pages/pool-fill-page/pool-fill-page.component';
 import {PoolResolver} from './shared/pools/pool-resolver.service';
+import {ProfilePageComponent} from './pages/profile-page/profile-page.component';
+import {AboutPageComponent} from './pages/about-page/about-page.component';
 
 export const appRoutes: Routes = [
   {
@@ -37,10 +39,21 @@ export const appRoutes: Routes = [
       {
         path: 'pool/:id',
         component: PoolFillPageComponent,
-        resolve: { pool: PoolResolver }
+        resolve: {pool: PoolResolver}
+      },
+      {
+        path: 'profile',
+        component: ProfilePageComponent
       }
     ]
     // data: { title: 'Heroes List' }
   },
-  { path: '**', component: PageNotFoundComponent }
+  {
+    path: 'about',
+    component: AboutPageComponent
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  }
 ];

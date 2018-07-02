@@ -39,6 +39,8 @@
       "option": "option",
       "addOption": "Add option"
     },
+    "youHaveGotAssigned": "You have got {{number}} assigned pools",
+    "youHaveCreated": "You have created {{number}} of pools",
     "voted": "Voted",
     "vote": "vote",
     "summary": "Pool summary"

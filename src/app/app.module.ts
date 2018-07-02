@@ -29,6 +29,8 @@ import { PoolTileComponent } from './components/pool-tile/pool-tile.component';
 import { PublicPoolsPageComponent } from './pages/public-pools-page/public-pools-page.component';
 import { PoolFillPageComponent } from './pages/pool-fill-page/pool-fill-page.component';
 import { PoolComponent } from './components/pool/pool.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   // return new TranslateHttpLoader(http);
@@ -54,7 +56,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     PoolTileComponent,
     PublicPoolsPageComponent,
     PoolFillPageComponent,
-    PoolComponent
+    PoolComponent,
+    ProfilePageComponent,
+    AboutPageComponent
   ],
   imports: [
     NgbModule.forRoot(),
