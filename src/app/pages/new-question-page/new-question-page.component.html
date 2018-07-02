@@ -1,6 +1,6 @@
 <div class="content">
-  <div class="right voteo-button voteo-bold" (click)="getNextQuestion(createQuestionForm)">{{operation}}</div>
-  <div *ngIf="currentQuestionIndex > 0" class="left voteo-button voteo-bold" (click)="getPreviousQuestion(createQuestionForm)"><</div>
+  <div class="right switch-btn voteo-bold" (click)="getNextQuestion(createQuestionForm)">{{operation}}</div>
+  <div *ngIf="currentQuestionIndex > 0" class="left switch-btn" (click)="getPreviousQuestion(createQuestionForm)"><</div>
   <div class="wrapper">
     <div class="header">{{'pools.newPool' | translate}}</div>
     <form (ngSubmit)="createPool(createQuestionForm)" [formGroup]="createQuestionForm">

@@ -18,11 +18,17 @@ import { PoolActionsComponent } from './components/pool-actions/pool-actions.com
 import { PoolActionElementComponent } from './components/pool-action-element/pool-action-element.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NewQuestionPageComponent } from './pages/new-question-page/new-question-page.component';
-import {MatButtonModule, MatSlideToggleModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatRadioModule, MatSlideToggleModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { PoolSummaryComponent } from './components/pool-summary/pool-summary.component';
 import { CreatePoolProcessPageComponent } from './pages/create-pool-process-page/create-pool-process-page.component';
 import { SplashScreenPageComponent } from './pages/splash-screen-page/splash-screen-page.component';
+import { ContactListPageComponent } from './pages/contact-list-page/contact-list-page.component';
+import { PoolsPageComponent } from './pages/pools-page/pools-page.component';
+import { PoolTileComponent } from './components/pool-tile/pool-tile.component';
+import { PublicPoolsPageComponent } from './pages/public-pools-page/public-pools-page.component';
+import { PoolFillPageComponent } from './pages/pool-fill-page/pool-fill-page.component';
+import { PoolComponent } from './components/pool/pool.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   // return new TranslateHttpLoader(http);
@@ -42,13 +48,21 @@ export function HttpLoaderFactory(http: HttpClient) {
     NewQuestionPageComponent,
     PoolSummaryComponent,
     CreatePoolProcessPageComponent,
-    SplashScreenPageComponent
+    SplashScreenPageComponent,
+    ContactListPageComponent,
+    PoolsPageComponent,
+    PoolTileComponent,
+    PublicPoolsPageComponent,
+    PoolFillPageComponent,
+    PoolComponent
   ],
   imports: [
     NgbModule.forRoot(),
     MatSlideToggleModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatCheckboxModule,
+    MatRadioModule,
     ReactiveFormsModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes, { useHash: true }),

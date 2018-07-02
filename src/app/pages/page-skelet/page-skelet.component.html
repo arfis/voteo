@@ -1,7 +1,7 @@
 <app-header class="header"></app-header>
 <div class="content row">
   <div class="col-4">
-    <app-profile></app-profile>
+    <app-profile [profile]="contact$ | async"></app-profile>
   </div>
   <div class="col-8">
     <router-outlet></router-outlet>

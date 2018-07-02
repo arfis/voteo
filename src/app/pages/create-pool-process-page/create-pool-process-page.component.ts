@@ -36,7 +36,6 @@ export class CreatePoolProcessPageComponent implements OnInit {
   }
 
   setNextQuestion(question) {
-    console.log('setting next question');
     this.pool[this.currentIndex] = question;
     this.currentIndex++;
 

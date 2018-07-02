@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ContactService} from '../../shared/contact/contact.service';
 
 @Component({
   selector: 'app-page-skelet',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageSkeletComponent implements OnInit {
 
-  constructor() { }
+  contact$;
+
+  constructor(private _contactService: ContactService) {
+    this.contact$ = _contactService.getOwnUserInfo();
+  }
 
   ngOnInit() {
   }

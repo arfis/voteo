@@ -16,11 +16,14 @@
     "delete": "remove"
   },
   "pools": {
+    "publicPools": "Public pools",
+    "active": "Active pools",
     "createNew": "Create a new pool",
     "or": "or",
     "noPending": "there are no pending pools",
     "public": "There are {{numberOfPools}} live public pools",
     "question": "Question",
+    "questions": "Questions",
     "types" : {
       "create" : "Create pool",
       "vote": "Vote",
@@ -36,6 +39,11 @@
       "option": "option",
       "addOption": "Add option"
     },
+    "voted": "Voted",
+    "vote": "vote",
     "summary": "Pool summary"
+  },
+  "profile": {
+    "contacts": "contacts"
   }
 }

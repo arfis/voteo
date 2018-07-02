@@ -1,7 +1,9 @@
 <div class="wrapper">
 
   <div class="profile-picture">
-    <img class="img-fluid" src="https://pbs.twimg.com/profile_images/934317901745655809/giHHc1bR_400x400.jpg">
+    <img class="img-fluid" [src]="picture"
+         [style.width.px]="pictureSize"
+          [style.height.px]="pictureSize">
   </div>
 
   <div class="name">
@@ -13,7 +15,7 @@
       <input #cryptoAddressElement class="voteo-row"
              (click)="copyToClipboard()" [(ngModel)]="cryptoAddress">
       <div class="voteo-row">{{address}}</div>
-      <div class="voteo-row">{{contacts}}</div>
+      <div class="voteo-row">{{contacts}} {{'profile.contacts' | translate}}</div>
       <div class="voteo-row">{{email}}</div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {PoolsService} from '../../shared/pools/pools.service';
 
 @Component({
@@ -10,6 +10,11 @@ export class ProfileComponent implements OnInit {
 
   @ViewChild('cryptoAddressElement')
   cryptoAddressElement;
+
+  @Input()
+  profile;
+  @Input()
+  pictureSize = 150;
 
   constructor(private _poolsService: PoolsService) { }
 
@@ -27,22 +32,26 @@ export class ProfileComponent implements OnInit {
   }
 
   get address() {
-    return 'Bratislava, Slovakia';
+    return this.profile.city;
   }
 
   get contacts() {
-    return '58 contacts';
+    return this.profile.contacts;
   }
 
   get email() {
-    return 'info@bitcoach.net';
+    return this.profile.email;
   }
 
   get isValidated() {
-    return true;
+    return this.profile.validated;
   }
 
   get name() {
-    return 'Kamil Bitcoach';
+    return this.profile.name;
+  }
+
+  get picture() {
+    return this.profile.picture;
   }
 }

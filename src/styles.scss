@@ -73,6 +73,17 @@ em {
     color: $color-bitcoach-blue;
     background: linear-gradient(to right, $color-white, $color-bitcoach-extralightblue);
   }
+
+  &[disabled] {
+    cursor: not-allowed;
+    color: $color-bitcoach-blue;
+    background: linear-gradient(to right, $color-white, $color-bitcoach-extralightblue);
+
+    &:hover {
+      color: $color-bitcoach-blue;
+      background: linear-gradient(to right, $color-white, $color-bitcoach-extralightblue);
+    }
+  }
 }
 
 strong em {

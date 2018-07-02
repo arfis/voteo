@@ -1,4 +1,5 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-pool-action-element',
@@ -8,6 +9,8 @@ import {Component, HostListener, Input, OnInit} from '@angular/core';
 export class PoolActionElementComponent implements OnInit {
 
   @Input() label;
+  @Input() picture;
+  @Input() redirectLink;
 
   hovered;
 
@@ -21,9 +24,12 @@ export class PoolActionElementComponent implements OnInit {
     this.hovered = false;
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  redirectToPage() {
+    this.router.navigate([this.redirectLink]);
+  }
 }
