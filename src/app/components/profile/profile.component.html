@@ -1,15 +1,16 @@
 <div class="wrapper">
 
-  <div class="profile-picture">
-    <img class="img-fluid" [src]="picture"
-         [style.width.px]="pictureSize"
-          [style.height.px]="pictureSize">
-  </div>
+  <div class="social-wrapper">
+    <div class="profile-picture">
+      <img class="img-fluid" [src]="picture"
+           [style.width.px]="pictureSize"
+           [style.height.px]="pictureSize">
+    </div>
 
-  <div class="name">
-    {{name}} <span *ngIf="isValidated"><img class="validated" src="assets/img/check.png"></span>
+    <div class="name">
+      {{name}} <span *ngIf="isValidated"><img class="validated" src="assets/img/check.png"></span>
+    </div>
   </div>
-
   <div class="information">
     <div class="voteo-table">
       <input #cryptoAddressElement class="voteo-row"

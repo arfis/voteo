@@ -16,7 +16,10 @@
     "delete": "remove"
   },
   "pools": {
+    "createQuestions": "Create questions",
+    "poolSettings": "PoolSettings",
     "publicPools": "Public pools",
+    "done": "Done",
     "active": "Active pools",
     "createNew": "Create a new pool",
     "or": "or",
@@ -33,7 +36,7 @@
     "newQuestion": "New question",
     "create": {
       "name": "question name",
-      "openEnded": "closed-ended",
+      "openEnded": "open-ended",
       "openEndedHint": "(set possible answers)",
       "multiple": "multiple choices",
       "option": "option",
@@ -47,5 +50,9 @@
   },
   "profile": {
     "contacts": "contacts"
+  },
+  "language": {
+    "sk": "Slovak",
+    "en": "English"
   }
 }

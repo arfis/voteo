@@ -1,16 +1,50 @@
+<mat-horizontal-stepper #stepper>
+  <mat-step>
+    <form>
+      <ng-template matStepLabel>{{'pools.createQuestions' | translate}}</ng-template>
+      <app-new-question-page [question]="currentQuestion"
+                             [numberOfQuestions]="numberOfQuestions"
+                             [currentQuestionIndex]="currentIndex"
+                             (afterNextQuestionPressed)="setNextQuestion($event)"
+                             (afterPreviousQuestionPressed)="setPreviousQuestion($event)"
+                             (afterClickOnRemove)="removeCurrentQuestion($event)"
+                             (onSubmit)="continueToSummary($event)">
+        <button class="voteo-button" mat-button matStepperNext>Next</button>
+      </app-new-question-page>
+      <div>
 
-  <app-new-question-page *ngIf="!waitingValidation; else summary"
-                         [question]="currentQuestion"
-                         [numberOfQuestions]="numberOfQuestions"
-                         [currentQuestionIndex]="currentIndex"
-                         (afterNextQuestionPressed)="setNextQuestion($event)"
-                         (afterPreviousQuestionPressed)="setPreviousQuestion($event)"
-                         (afterClickOnRemove)="removeCurrentQuestion($event)"
-                         (onSubmit)="continueToSummary($event)"></app-new-question-page>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <form>
+      <ng-template matStepLabel>{{'pools.poolSettings' | translate}}</ng-template>
+      <app-pool-settings>
+        <button class="voteo-button" mat-button matStepperPrevious>Back</button>
+        <button class="voteo-button" mat-button matStepperNext>Next</button>
+      </app-pool-settings>
+    </form>
+  </mat-step>
+  <mat-step>
+    <form>
+      <ng-template matStepLabel>{{'pools.summary' | translate}}</ng-template>
+      <app-pool-summary [pool]="pool"
+                        (onSubmitPressed)="createPool()"
+                        (onBackPressed)="goToEdit()">
+        <button class="voteo-button" mat-button matStepperPrevious>Back</button>
+        <button class="voteo-button" mat-button matStepperNext>Next</button>
+      </app-pool-summary>
+      <div>
 
-  <ng-template #summary>
-    <app-pool-summary *ngIf="waitingValidation"
-                      [pool]="pool"
-                      (onSubmitPressed)="createPool()"
-                      (onBackPressed)="goToEdit()"></app-pool-summary>
-  </ng-template>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>{{'pools.done' | translate}}</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

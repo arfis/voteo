@@ -1,14 +1,55 @@
 {
   "header": {
     "title": ".voteo",
-    "profile": "my profile",
-    "contactList": "contact list",
-    "about": "about",
+    "profile": "môj profil",
+    "contactList": "kontakty",
+    "about": "o nás",
     "actions": {
-      "logout": "Logout",
+      "logout": "Odhlásiť"
     }
   },
   "actions" : {
-    "viewAll": "View All"
+    "viewAll": "zobraziť všetko",
+    "submit": "potvrdiť",
+    "continue": "pokračovať",
+    "back": "späť",
+    "delete": "vymazať"
+  },
+  "pools": {
+    "publicPools": "Verejné dotazníky",
+    "active": "Aktívne dotazníky",
+    "createNew": "Vytvoriť nový dotazník",
+    "or": "alebo",
+    "noPending": "nie sú ďalšie nevyplnené dotazníky",
+    "public": "Existuje {{numberOfPools}} verejných dotazníkov",
+    "question": "Otázka",
+    "questions": "Otázky",
+    "types" : {
+      "create" : "Vytvor dotazník",
+      "vote": "Zahlasuj",
+      "public": "Verejné dotazníky"
+    },
+    "newPool": "Vytvor nový dotazníky",
+    "newQuestion": "Nová otázka",
+    "create": {
+      "name": "otázka",
+      "openEnded": "otvorené odpovede",
+      "openEndedHint": "(voľná odpoveď)",
+      "multiple": "viacero odpovedi",
+      "option": "možnosť",
+      "addOption": "Pridaj možnosť"
+    },
+    "youHaveGotAssigned": "Máš {{number}} pridelených dotazníkov",
+    "youHaveCreated": "Vytvoril si {{number}} dotazníkov",
+    "voted": "Zahlasované",
+    "vote": "zahlasuj",
+    "summary": "Sumár dotazníka"
+  },
+  "profile": {
+    "contacts": "kontakty"
+  },
+  "language": {
+    "sk": "Slovenský",
+    "en": "Anglický"
   }
 }

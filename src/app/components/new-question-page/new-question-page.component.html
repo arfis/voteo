@@ -32,7 +32,7 @@
 
       <div class="submit">
         <button *ngIf="currentQuestionIndex > 0" type="button" (click)="removeCurrentQuestion()" class="voteo-button">{{'actions.delete' | translate}}</button>
-        <button class="voteo-button">{{'actions.continue' | translate}}</button>
+        <ng-content></ng-content>
       </div>
     </form>
   </div>

@@ -17,8 +17,18 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { PoolActionsComponent } from './components/pool-actions/pool-actions.component';
 import { PoolActionElementComponent } from './components/pool-action-element/pool-action-element.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { NewQuestionPageComponent } from './pages/new-question-page/new-question-page.component';
-import {MatButtonModule, MatCheckboxModule, MatRadioModule, MatSlideToggleModule} from '@angular/material';
+import { NewQuestionPageComponent } from './components/new-question-page/new-question-page.component';
+import {
+  MatButtonModule,
+  MatCheckboxModule, MatDatepickerModule, MatIconModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatSlideToggleModule,
+  MatStepperModule,
+  NativeDateAdapter,
+  DateAdapter,
+  MatNativeDateModule, MatFormFieldModule, MatInputModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { PoolSummaryComponent } from './components/pool-summary/pool-summary.component';
 import { CreatePoolProcessPageComponent } from './pages/create-pool-process-page/create-pool-process-page.component';
@@ -31,6 +41,8 @@ import { PoolFillPageComponent } from './pages/pool-fill-page/pool-fill-page.com
 import { PoolComponent } from './components/pool/pool.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
+import { PoolSettingsComponent } from './components/pool-settings/pool-settings.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   // return new TranslateHttpLoader(http);
@@ -58,15 +70,24 @@ export function HttpLoaderFactory(http: HttpClient) {
     PoolFillPageComponent,
     PoolComponent,
     ProfilePageComponent,
-    AboutPageComponent
+    AboutPageComponent,
+    LanguageSelectorComponent,
+    PoolSettingsComponent
   ],
   imports: [
     NgbModule.forRoot(),
     MatSlideToggleModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
     BrowserAnimationsModule,
+    MatSelectModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatIconModule,
     MatRadioModule,
+    MatStepperModule,
+    MatDatepickerModule,
     ReactiveFormsModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes, { useHash: true }),
@@ -79,6 +100,11 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
+  ],
+  providers: [
+    {
+      provide: DateAdapter, useClass: NativeDateAdapter
+    },
   ],
   bootstrap: [AppComponent]
 })

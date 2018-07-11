@@ -16,9 +16,5 @@ export class AppComponent {
 
     // const browserLang = this._translateService.getBrowserLang();
     _translateService.use('en');
-
-    _translateService.get('test').subscribe(
-      result => console.log('translation of test', result)
-    );
   }
 }

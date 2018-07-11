@@ -58,6 +58,27 @@
   background: linear-gradient(to right, $color-bitcoach-lightBlue , $color-bitcoach-blue);
 }
 
-.col-4 {
+.col-4, span {
   outline: none !important;
+}
+
+mat-select {
+  border: 0px;
+}
+
+mat-form-field {
+  display: block;
+
+  .mat-select-value-text {
+    color: $color-white !important;
+  }
+}
+
+.language {
+  margin:auto;
+}
+
+.language-wrapper {
+  margin: auto;
+  display: inline-block;
 }

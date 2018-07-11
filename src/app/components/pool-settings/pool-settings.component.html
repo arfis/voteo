@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="type">
+  {{'pools.settings.public'}}<mat-slide-toggle></mat-slide-toggle>{{'pools.settings.private'}}
+  </div>
+
+  <div class="verification">
+    <mat-form-field>
+      <mat-select [placeholder]="'pools.verification' | translate">
+        <mat-option *ngFor="let verification of verifications" [value]="verification.value">
+          {{verification.label}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="date">
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <ngb-timepicker></ngb-timepicker>
+  </div>
+
+  <!--<div class="date">-->
+    <!--<mat-form-field>-->
+      <!--<input matInput [matDatepicker]="picker" placeholder="Choose a date">-->
+      <!--<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+      <!--<mat-datepicker #picker></mat-datepicker>-->
+    <!--</mat-form-field>-->
+    <!--<ngb-timepicker></ngb-timepicker>-->
+  <!--</div>-->
+</div>
