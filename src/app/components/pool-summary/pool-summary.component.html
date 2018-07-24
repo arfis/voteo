@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="header">{{'pools.newPool' | translate}}</div>
-
+{{pool | json}}
   <div class="title voteo-bold">{{'pools.summary' | translate}}</div>
   <div class="voteo-table">
     <ng-container *ngFor="let question of pool">

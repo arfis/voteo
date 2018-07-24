@@ -3,7 +3,7 @@
   <div *ngIf="currentQuestionIndex > 0" class="left switch-btn" (click)="getPreviousQuestion(createQuestionForm)"><</div>
   <div class="wrapper">
     <div class="header">{{'pools.newPool' | translate}}</div>
-    <form (ngSubmit)="createPool(createQuestionForm)" [formGroup]="createQuestionForm">
+    <form [formGroup]="createQuestionForm">
       <div class="title voteo-bold">{{'pools.question' | translate}} {{currentQuestionIndex + 1}}/{{numberOfQuestions + 1}}</div>
       <input class="question-name" formControlName="name">
 

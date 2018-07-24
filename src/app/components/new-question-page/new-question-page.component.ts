@@ -10,7 +10,7 @@ import {PoolsService} from '../../shared/pools/pools.service';
 export class NewQuestionPageComponent implements OnChanges {
 
   @Output()
-  onSubmit = new EventEmitter();
+  onUpdate = new EventEmitter();
   @Output()
   afterNextQuestionPressed = new EventEmitter<any>();
   @Output()
@@ -56,6 +56,13 @@ export class NewQuestionPageComponent implements OnChanges {
       'multiple': [false],
       'options': this.fb.array([])
     });
+
+    this.createQuestionForm.valueChanges.subscribe(
+      questions => {
+        console.log('questions change', questions);
+        this.onUpdate.emit(questions);
+      }
+    );
   }
 
   addOption(label = '') {
@@ -63,10 +70,6 @@ export class NewQuestionPageComponent implements OnChanges {
       'label': [label, Validators.required]
     });
     this.options.push(option);
-  }
-
-  createPool({value}) {
-    this.onSubmit.emit(value);
   }
 
   getNextQuestion({value}) {

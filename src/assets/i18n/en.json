@@ -16,6 +16,22 @@
     "delete": "remove"
   },
   "pools": {
+    "settings": {
+      "public": "Public",
+      "private": "Private",
+      "verification": "Kind of verification",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "reward": "is reward?",
+      "totalReward": "Total reward",
+      "totalBudget": "Budget",
+      "participans": "Participans",
+      "tokenRequirements": "Token requirements",
+      "minimumAmount": "Minimum amount",
+      "tokensPerVote": "Token per vote",
+      "tokenType": "Token type",
+      "audianceSpecification": "Audiance specification"
+    },
     "createQuestions": "Create questions",
     "poolSettings": "PoolSettings",
     "publicPools": "Public pools",

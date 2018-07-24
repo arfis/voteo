@@ -10,3 +10,15 @@
   border: 1px solid $color-bitcoach-gold;
   border-radius: 5px;
 }
+
+
+.button-wrapper {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  margin: 10px;
+
+  button:first-child {
+    margin-right: 5px;
+  }
+}

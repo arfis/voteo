@@ -8,7 +8,7 @@
                              (afterNextQuestionPressed)="setNextQuestion($event)"
                              (afterPreviousQuestionPressed)="setPreviousQuestion($event)"
                              (afterClickOnRemove)="removeCurrentQuestion($event)"
-                             (onSubmit)="continueToSummary($event)">
+                             (onUpdate)="questionsUpdate($event)">
         <button class="voteo-button" mat-button matStepperNext>Next</button>
       </app-new-question-page>
       <div>
@@ -19,9 +19,11 @@
   <mat-step>
     <form>
       <ng-template matStepLabel>{{'pools.poolSettings' | translate}}</ng-template>
-      <app-pool-settings>
-        <button class="voteo-button" mat-button matStepperPrevious>Back</button>
-        <button class="voteo-button" mat-button matStepperNext>Next</button>
+      <app-pool-settings (onUpdate)="settingUpdate($event)">
+        <div class="button-wrapper">
+          <button class="voteo-button" mat-button matStepperPrevious>Back</button>
+          <button class="voteo-button" mat-button matStepperNext>Next</button>
+        </div>
       </app-pool-settings>
     </form>
   </mat-step>
@@ -31,8 +33,10 @@
       <app-pool-summary [pool]="pool"
                         (onSubmitPressed)="createPool()"
                         (onBackPressed)="goToEdit()">
-        <button class="voteo-button" mat-button matStepperPrevious>Back</button>
-        <button class="voteo-button" mat-button matStepperNext>Next</button>
+        <div class="button-wrapper">
+          <button class="voteo-button" mat-button matStepperPrevious>Back</button>
+          <button class="voteo-button" mat-button matStepperNext>Next</button>
+        </div>
       </app-pool-summary>
       <div>
 

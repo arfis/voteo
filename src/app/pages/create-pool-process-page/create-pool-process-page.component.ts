@@ -66,6 +66,14 @@ export class CreatePoolProcessPageComponent implements OnInit {
     this.pool.splice(index, 1);
   }
 
+  settingUpdate(settings) {
+    (this.pool as any).settings = settings;
+  }
+
+  questionsUpdate(questions) {
+    (this.pool as any).questions = questions;
+  }
+
   get numberOfQuestions() {
     return this.pool.length - 1;
   }
