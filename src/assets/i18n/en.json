@@ -32,6 +32,7 @@
       "tokenType": "Token type",
       "audianceSpecification": "Audiance specification"
     },
+    "noQuestions": "No questions where created yet!",
     "createQuestions": "Create questions",
     "poolSettings": "PoolSettings",
     "publicPools": "Public pools",
@@ -51,12 +52,15 @@
     "newPool": "Create new pool",
     "newQuestion": "New question",
     "create": {
+      "settings": "Pool settings",
       "name": "question name",
       "openEnded": "open-ended",
       "openEndedHint": "(set possible answers)",
       "multiple": "multiple choices",
       "option": "option",
-      "addOption": "Add option"
+      "addOption": "Add option",
+      "message": "Create",
+      "confirmation": "Click for create"
     },
     "youHaveGotAssigned": "You have got {{number}} assigned pools",
     "youHaveCreated": "You have created {{number}} of pools",

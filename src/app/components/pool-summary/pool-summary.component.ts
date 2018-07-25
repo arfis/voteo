@@ -28,18 +28,27 @@ export class PoolSummaryComponent implements OnInit {
   }
 
   get name() {
-    return this.pool.question.name;
+    return this.questions.name;
   }
 
   get openEnded() {
-    return this.pool.question.openEnded;
+    return this.questions.openEnded;
   }
 
   get multiple() {
-    return this.pool.question.multiple;
+    return this.questions.multiple;
   }
 
   get options() {
-    return this.pool.question.options;
+    return this.questions.options;
   }
+
+  get questions() {
+    return this.pool.questions;
+  }
+
+  get settings() {
+    return this.pool.settings;
+  }
+
 }

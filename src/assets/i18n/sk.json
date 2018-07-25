@@ -16,6 +16,24 @@
     "delete": "vymazať"
   },
   "pools": {
+    "settings": {
+      "public": "Verejny",
+      "private": "Privatny",
+      "verification": "Typ verifikacie",
+      "startDate": "Datum zaciatku",
+      "endDate": "Datum ukoncenia",
+      "reward": "odmena?",
+      "totalReward": "Celkova odmena",
+      "totalBudget": "Budget",
+      "participans": "Pocet opytanych",
+      "tokenRequirements": "Poziadavky tokenu",
+      "minimumAmount": "Minimalny pocet opytanych",
+      "tokensPerVote": "Pocet tokenov za hlas",
+      "tokenType": "Typ tokenu",
+      "audianceSpecification": "Specifikacia publika"
+    },
+    "noQuestions": "Neboli doposial ziadne otazky vytvorene!",
+    "createQuestions": "Vytvor otazky",
     "publicPools": "Verejné dotazníky",
     "active": "Aktívne dotazníky",
     "createNew": "Vytvoriť nový dotazník",
@@ -32,12 +50,15 @@
     "newPool": "Vytvor nový dotazníky",
     "newQuestion": "Nová otázka",
     "create": {
+      "settings": "Nastavenie dotaznika",
       "name": "otázka",
       "openEnded": "otvorené odpovede",
       "openEndedHint": "(voľná odpoveď)",
       "multiple": "viacero odpovedi",
       "option": "možnosť",
-      "addOption": "Pridaj možnosť"
+      "addOption": "Pridaj možnosť",
+      "message": "Vytvor",
+      "confirmation": "Klikni pre vytvorenie"
     },
     "youHaveGotAssigned": "Máš {{number}} pridelených dotazníkov",
     "youHaveCreated": "Vytvoril si {{number}} dotazníkov",

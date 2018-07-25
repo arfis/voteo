@@ -9,7 +9,7 @@ import {PoolsService} from '../../shared/pools/pools.service';
 })
 export class CreatePoolProcessPageComponent implements OnInit {
 
-  pool = [{}];
+  pool = {questions: [], settings: {}};
   currentIndex = 0;
   currentQuestion = {};
   waitingValidation = false;
@@ -27,10 +27,6 @@ export class CreatePoolProcessPageComponent implements OnInit {
     this.waitingValidation = true;
   }
 
-  createPool() {
-    this._poolsService.createPool(this.pool);
-  }
-
   goToEdit() {
     this.waitingValidation = false;
   }
@@ -40,9 +36,9 @@ export class CreatePoolProcessPageComponent implements OnInit {
     this.currentIndex++;
 
     if (this.pool[this.currentIndex]) {
-      this.currentQuestion = this.pool[this.currentIndex];
+      this.currentQuestion = this.pool.questions[this.currentIndex];
     } else {
-      this.pool[this.currentIndex] = {};
+      this.pool.questions[this.currentIndex] = {};
       this.currentQuestion = {
         'name': '',
         'openEnded': false,
@@ -62,19 +58,32 @@ export class CreatePoolProcessPageComponent implements OnInit {
 
   removeCurrentQuestion(index) {
     this.currentIndex--;
-    this.currentQuestion = this.pool[this.currentIndex];
-    this.pool.splice(index, 1);
+    // this.currentQuestion = this.pool[this.currentIndex];
+    this.pool.questions.splice(index, 1);
   }
 
   settingUpdate(settings) {
     (this.pool as any).settings = settings;
+    console.log(this.pool);
   }
 
   questionsUpdate(questions) {
-    (this.pool as any).questions = questions;
+    (this.pool as any).questions[this.currentIndex] = questions;
+    console.log(this.pool);
+  }
+
+  createPool() {
+    if (this.hasQuestions) {
+      console.log('create', this.pool);
+      this._poolsService.createPool(this.pool);
+    }
+  }
+
+  get hasQuestions() {
+    return this.pool.questions.length > 0;
   }
 
   get numberOfQuestions() {
-    return this.pool.length - 1;
+    return this.pool.questions.length - 1;
   }
 }

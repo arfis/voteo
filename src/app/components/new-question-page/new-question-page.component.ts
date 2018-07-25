@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {FormArray, FormBuilder, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PoolsService} from '../../shared/pools/pools.service';
 
 @Component({
@@ -25,7 +25,7 @@ export class NewQuestionPageComponent implements OnChanges {
   @Input()
   currentQuestionIndex;
 
-  createQuestionForm;
+  createQuestionForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.initForm();
@@ -33,11 +33,9 @@ export class NewQuestionPageComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.question) {
-      console.log('question', this.question);
       this.initForm();
 
       if (this.question) {
-
         if (this.question.options) {
           for (const option of this.question.options) {
            this.addOption();

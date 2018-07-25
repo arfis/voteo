@@ -10,20 +10,20 @@ export class PoolSettingsComponent implements OnInit {
 
   poolSettings: FormGroup;
   verifications = [{
-    value: 1,
+    value: 'KYC',
     label: 'KYC'
   },
     {
-      value: 2,
+      value: 'KYC 2.0',
       label: 'KYC 2.0'
     }];
   tokenTypes = [
     {
-    value: 1,
+    value: 'ETH',
     label: 'ETH'
     },
     {
-      value: 2,
+      value: 'NEO',
       label: 'NEO'
     }];
 
@@ -51,7 +51,7 @@ export class PoolSettingsComponent implements OnInit {
   ngOnInit() {
     this.poolSettings.valueChanges.subscribe(
       form => {
-        console.log(form);
+        this.onUpdate.emit(form);
       }
     );
   }

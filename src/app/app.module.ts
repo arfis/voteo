@@ -43,6 +43,12 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 import { PoolSettingsComponent } from './components/pool-settings/pool-settings.component';
+import {LocalizedDatePipe} from './shared/localizationDatePipe/localization-date-pipe.pipe';
+
+import { registerLocaleData } from '@angular/common';
+import localeSk from '@angular/common/locales/sk';
+
+registerLocaleData(localeSk);
 
 export function HttpLoaderFactory(http: HttpClient) {
   // return new TranslateHttpLoader(http);
@@ -72,7 +78,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProfilePageComponent,
     AboutPageComponent,
     LanguageSelectorComponent,
-    PoolSettingsComponent
+    PoolSettingsComponent,
+    LocalizedDatePipe
   ],
   imports: [
     NgbModule.forRoot(),
@@ -108,4 +115,4 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
