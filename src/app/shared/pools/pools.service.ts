@@ -102,12 +102,19 @@ export class PoolsService {
       ['eqweqw']);
   }
 
+  public getAllPublic() {
+    return this._nosService.testInvoke(
+      Methods.scriptHash,
+      Methods.getPublicAll,
+      [this._nosService.address]
+    );
+  }
   public createPool(poolParams: any) {
 
-   return this._nosService.testInvoke(
+   return this._nosService.invoke(
       Methods.scriptHash,
       Methods.createPoolOperation,
-      ['dsajdksajkasdjskksksajdaskjsadkdjaskLUKAS', 'LUKAS']
+      [this._nosService.address, JSON.stringify(poolParams)]
     );
   }
 

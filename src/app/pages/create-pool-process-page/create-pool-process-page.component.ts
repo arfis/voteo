@@ -82,14 +82,8 @@ export class CreatePoolProcessPageComponent implements OnInit {
       console.log('create', this.pool);
       this._poolsService.createPool(this.pool).subscribe(
         result => {
-          alert(result.script);
+          alert("USPECHH");
           // this.receivedPool = result.script.replace('\'','');
-          const string = result.script;
-
-          this._poolsService.getPoolInvoke(string).subscribe(
-            result => alert(result),
-            error => alert(error)
-          )
         },
         error => {alert('NEUSPECH'); this.error = error}
       );

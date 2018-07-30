@@ -7,11 +7,16 @@ import {from, Observable} from 'rxjs';
 export class NosApiService {
 
   nos;
+  address;
 
   constructor() {
     if ((window as any).NOS) {
       this.nos = (window as any).NOS.V1;
     }
+    this.getAddress().subscribe(
+      address =>
+        this.address = address
+    );
   }
 
   isConnected() {
@@ -31,9 +36,9 @@ export class NosApiService {
     const address = 'AZPkgTJixxkSFPyBZrcVpLj9nsHsPDUVkF';
 
     if (!addres) {
-      return this.nos.getBalance({asset})
+      return this.nos.getBalance({asset});
     } else {
-      this.nos.getBalance({asset, address})
+      this.nos.getBalance({asset, address});
     }
   }
 
@@ -43,7 +48,8 @@ export class NosApiService {
     }
   }
 
-  invoke(scriptHash: string, operation: string, args?: string[]) {
+  invoke(scriptHash: string, operation: string, args?: string[]): Observable<any> {
+    alert(args);
     if (this.nos) {
       return from(this.nos.invoke({scriptHash, operation, args}));
     }

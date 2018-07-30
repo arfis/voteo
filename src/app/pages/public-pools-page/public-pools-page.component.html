@@ -1,4 +1,6 @@
 <div class="pools-wrapper">
+  {{error | json}}
+  {{result | json}}
   <span>{{'pools.publicPools' | translate}}</span>
   <app-pool-tile class="pool-item" *ngFor="let pool of pools$ | async" [pool]="pool"></app-pool-tile>
 </div>

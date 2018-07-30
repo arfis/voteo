@@ -1,9 +1,11 @@
 export class Methods {
 
-  static scriptHash = 'f47bcf817bab436f378b2b0193dc7deca62c09bc';
+  static scriptHash = '8ec4dc95f3960517f808bbbd3cdb8ece4b31e16d';
 
   // OPERATIONS HERE
   static getPoolOperation = 'GetPoll';
-  static createPoolOperation = 'PutPoll';
+  static createPoolOperation = 'RegisterPoll';
+  static getPublicAll = "GetPublicAll";
+
   static getPools = 'ENTER_OPERATION_CODE_HERE';
 }
