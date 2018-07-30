@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {PoolsService} from '../../shared/pools/pools.service';
+import {stringFromArray, stringFromHex} from '../../shared/helper';
 
 @Component({
   selector: 'app-create-pool-process-page',
@@ -13,6 +14,10 @@ export class CreatePoolProcessPageComponent implements OnInit {
   currentIndex = 0;
   currentQuestion = {};
   waitingValidation = false;
+  testResult;
+  receivedPool;
+  newPool;
+  error;
 
   constructor(private _poolsService: PoolsService) { }
 
@@ -75,10 +80,56 @@ export class CreatePoolProcessPageComponent implements OnInit {
   createPool() {
     if (this.hasQuestions) {
       console.log('create', this.pool);
-      this._poolsService.createPool(this.pool);
+      this._poolsService.createPool(this.pool).subscribe(
+        result => {
+          alert(result.script);
+          // this.receivedPool = result.script.replace('\'','');
+          const string = result.script;
+
+          this._poolsService.getPoolInvoke(string).subscribe(
+            result => alert(result),
+            error => alert(error)
+          )
+        },
+        error => {alert('NEUSPECH'); this.error = error}
+      );
     }
   }
 
+  getPool() {
+    this._poolsService.getPool(1).subscribe(
+      result => {
+        alert('got pool');
+        this.newPool = result;
+        //this.newPool = stringFromHex(result.stack[0].value);
+      },
+          error => this.error = error
+    );
+  }
+
+  testStorage() {
+    this._poolsService.testStorage().subscribe(
+      result => {
+        this.testResult = result;
+        console.log('rest ', result);
+      },
+      error => console.log('ON ERROR =', error)
+    );
+  }
+  testInvoke() {
+    this._poolsService.testInvoke().subscribe(
+      result => {
+        this.testResult = result;
+        console.log('rest ', result);
+        if (result.stack) {
+          this.testResult = result;
+          // this.testResult = stringFromHex(result.stack[0].value);
+        }
+        // this.testResult = stringFromArray(result.stack[0].value);
+      },
+          error => console.log('ON ERROR =', error)
+    );
+  }
   get hasQuestions() {
     return this.pool.questions.length > 0;
   }

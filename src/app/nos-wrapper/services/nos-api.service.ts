@@ -37,9 +37,21 @@ export class NosApiService {
     }
   }
 
-  invokeMethod(scriptHash: string, operation: string, args?: string[]) {
+  testInvoke(scriptHash: string, operation: string, args?: string[]): Observable<any> {
     if (this.nos) {
-      from(this.nos.testInvoke({scriptHash, operation, args}));
+      return from(this.nos.testInvoke({scriptHash, operation, args}));
+    }
+  }
+
+  invoke(scriptHash: string, operation: string, args?: string[]) {
+    if (this.nos) {
+      return from(this.nos.invoke({scriptHash, operation, args}));
+    }
+  }
+
+  getStorage(scriptHash: string, key: string) {
+    if (this.nos) {
+      return from(this.nos.getStorage({scriptHash, key}));
     }
   }
 

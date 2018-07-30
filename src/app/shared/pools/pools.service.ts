@@ -69,37 +69,68 @@ export class PoolsService {
   }
 
   public getPool(id) {
-    return of({
-      id: 0,
-      name: 'What do you think about yourself',
-      questions: [{
-        name: 'kto si',
-        'openEnded': false,
-        'multiple': false,
-        'options': [
-          {'label': 'ja'},
-          {'label': 'ty'},
-          {'label': 'on'},
-        ]
-      },{
-          name: 'where have you been',
-          'openEnded': true,
-          'multiple': true,
-          'options': [
-            {'label': 'ja'},
-            {'label': 'ty'},
-            {'label': 'on'},
-          ]
-        }]
-    });
+    // return of({
+    //   id: 0,
+    //   name: 'What do you think about yourself',
+    //   questions: [{
+    //     name: 'kto si',
+    //     'openEnded': false,
+    //     'multiple': false,
+    //     'options': [
+    //       {'label': 'ja'},
+    //       {'label': 'ty'},
+    //       {'label': 'on'},
+    //     ]
+    //   },{
+    //       name: 'where have you been',
+    //       'openEnded': true,
+    //       'multiple': true,
+    //       'options': [
+    //         {'label': 'ja'},
+    //         {'label': 'ty'},
+    //         {'label': 'on'},
+    //       ]
+    //     }]
+    // });
+    // return this._nosService.getStorage(
+    //   Methods.scriptHash,
+    //   'poll'
+    // );
+    return this._nosService.testInvoke(
+      Methods.scriptHash,
+      Methods.getPoolOperation,
+      ['eqweqw']);
   }
 
   public createPool(poolParams: any) {
-    this._nosService.invokeMethod(
+
+   return this._nosService.testInvoke(
       Methods.scriptHash,
-      Methods.createPool,
-      poolParams
+      Methods.createPoolOperation,
+      ['dsajdksajkasdjskksksajdaskjsadkdjaskLUKAS', 'LUKAS']
     );
   }
 
+  public getPoolInvoke(script) {
+    return this._nosService.invoke(
+      script,
+      Methods.createPoolOperation,
+      ['dsajdksajkasdjskksksajdaskjsadkdjaskLUKAS', 'LUKAS']
+    );
+  }
+
+  public testStorage() {
+    return this._nosService.getStorage(
+      '9a309cfe03cead5b653bbb11f68ff6beced8f031',
+      'bucket.neo.target'
+    );
+  }
+
+  public testInvoke() {
+    return this._nosService.testInvoke(
+      '9a309cfe03cead5b653bbb11f68ff6beced8f031',
+      'GetDomain',
+      ['AK2nJJpJr6o664CWJKi1QRXjqeic2zRp8y', 'bucket.neo']
+    );
+  }
 }

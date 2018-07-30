@@ -1,6 +1,6 @@
 @import '../../../lib/styles/colors';
 
-.logo {
+.logo-wrapper {
   float: left;
   margin: 5px 35px 5px 15px;
   cursor: pointer;
@@ -81,4 +81,8 @@ mat-form-field {
 .language-wrapper {
   margin: auto;
   display: inline-block;
+}
+
+.logo {
+  height: 50px;
 }

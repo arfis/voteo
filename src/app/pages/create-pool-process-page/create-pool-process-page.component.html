@@ -1,3 +1,10 @@
+<button (click)="testStorage()">TEST Storage</button>
+<button (click)="testInvoke()">Test ivoke</button>
+<button (click)="getPool()">Get Pool</button>
+{{receivedPool | json}}
+{{testResult | json}}
+{{newPool | json}}
+{{error}}
 <mat-horizontal-stepper [linear]="true" #stepper>
   <mat-step [stepControl]="questionsForm">
     <form>
