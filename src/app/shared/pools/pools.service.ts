@@ -114,7 +114,7 @@ export class PoolsService {
    return this._nosService.invoke(
       Methods.scriptHash,
       Methods.createPoolOperation,
-      [this._nosService.address, JSON.stringify(poolParams)]
+      [this._nosService.address, JSON.stringify(poolParams), '']
     );
   }
 

@@ -50,6 +50,7 @@ export class NosApiService {
 
   invoke(scriptHash: string, operation: string, args?: string[]): Observable<any> {
     alert(args);
+
     if (this.nos) {
       return from(this.nos.invoke({scriptHash, operation, args}));
     }

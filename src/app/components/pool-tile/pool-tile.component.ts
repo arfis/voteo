@@ -24,19 +24,19 @@ export class PoolTileComponent implements OnInit {
   }
 
   get poolTitle() {
-    return this.pool.name;
+    return (this.pool.name) ? this.pool.name : this.pool;
   }
 
   get numberOfQuestions() {
-    return this.pool.questionCount;
+    return (this.pool.questionCount) ? this.pool.questionCount : 0;
   }
 
   get voted() {
-    return this.pool.voted;
+    return (this.pool.voted) ? this.pool.voted : 0;
   }
 
   get neededVoters() {
-    return this.pool.needsVotes;
+    return (this.pool.needsVotes) ? this.pool.needsVotes : 0;
   }
 
   get hasFreeVoting() {
