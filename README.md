@@ -1,26 +1,12 @@
 # Voteo
 
-This project is created by Bitcoach [www.bitcoach.net] and its purpose is to use blockchain for voting. Current version will be working on the nOS platform.
+Voteo is a voting web system build on the nOS blockchain using angular 6 on the frontend. Users can create polls or vote on pools. The created pools have got multiple settings. They can be public or private. When private the user can add wallet addreses which can vote. There are multiple settings which will be possible to set later on. The project is being worked on.
+
+## Install dependencies
+To run the applicaiton you will need Node. For installing run command `npm install` when in the frontend directory. This will install all the dependencies automatically.
 ## Development server
-
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Connecting with a smartcontract
+In the directory `app/src/shared` is a file `Methods.ts`. In this file is a static variable `scriptHash` where is the current smartcontract script hashm which is being added automatically into all requests.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+In the directory `app/nos-wrapper` is a simple module which is wrapping the nOS client functions (invoke, testInvoke,...). This methohds are being used by the application for invoking the smartcontract from the services.

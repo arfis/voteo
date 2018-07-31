@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {NosApiService} from '../../nos-wrapper/services/nos-api.service';
 import {Methods} from '../Methods';
-import {of} from 'rxjs';
+import {Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -109,6 +109,16 @@ export class PoolsService {
       [this._nosService.address]
     );
   }
+
+  public getPoolById(id): Observable<any> {
+
+    return this._nosService.testInvoke(
+      Methods.scriptHash,
+      Methods.getPoolById,
+      [this._nosService.address, id]
+    );
+  }
+
   public createPool(poolParams: any) {
 
    return this._nosService.invoke(

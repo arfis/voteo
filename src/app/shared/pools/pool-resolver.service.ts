@@ -9,6 +9,9 @@ export class PoolResolver implements Resolve<any> {
   constructor(private _poolsService: PoolsService) {}
 
   resolve(route: ActivatedRouteSnapshot) {
-    return this._poolsService.getPool(route.paramMap.get('id'));
+    const id = route.paramMap.get('id').toString();
+
+    return this._poolsService.getPoolById(id);
+   // return this._poolsService.getPool(route.paramMap.get('id'));
   }
 }

@@ -19,7 +19,7 @@ export class PoolTileComponent implements OnInit {
 
   openVoting() {
     if (this.hasFreeVoting) {
-      this.router.navigate(['pool/2']);
+      this.router.navigate([`pool/${this.pool}`]);
     }
   }
 
@@ -40,6 +40,6 @@ export class PoolTileComponent implements OnInit {
   }
 
   get hasFreeVoting() {
-    return this.voted < this.neededVoters;
+    return true; //this.voted < this.neededVoters;
   }
 }

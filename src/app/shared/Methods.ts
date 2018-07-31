@@ -5,7 +5,8 @@ export class Methods {
   // OPERATIONS HERE
   static getPoolOperation = 'GetPoll';
   static createPoolOperation = 'RegisterPoll';
-  static getPublicAll = "GetPublicAll";
-
+  static getPublicAll = 'GetPublicAll';
+  static getPoolById = 'GetPollById';
+  
   static getPools = 'ENTER_OPERATION_CODE_HERE';
 }
