@@ -17,13 +17,13 @@ export class PoolFillPageComponent implements OnInit {
 
   ngOnInit() {
     // this.pool = stringFromHex(this.route.snapshot.data.pool.stack[0].value);
+// alert(this.route.snapshot.data.pool);
+//     this._poolService.getPoolById("1").subscribe(
+//       result => this.pool = stringFromHex(result.stack[0].value),
+//       error => this.error = error
+//     );
 
-    this._poolService.getPoolById("1").subscribe(
-      result => this.pool = stringFromHex(result.stack[0].value),
-      error => this.error = error
-    );
-
-    //this.pool = JSON.parse(stringFromHex(this.route.snapshot.data.pool.stack[0].value));
+    this.pool = stringFromHex(this.route.snapshot.data.pool.stack[0].value);
   }
 
 

@@ -81,7 +81,7 @@ export class CreatePoolProcessPageComponent implements OnInit {
     if (this.hasQuestions) {
       this._poolsService.createPool(this.pool).subscribe(
         result => {
-          {alert('Poll was written into the blockchain');
+          alert('Poll was written into the blockchain');
           // this.receivedPool = result.script.replace('\'','');
         },
         error => {alert('NEUSPECH'); this.error = error}
