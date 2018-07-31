@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {PoolsService} from './pools.service';
 import {ActivatedRouteSnapshot, Resolve} from '@angular/router';
+import {hexToString} from '../helper';
 
 @Injectable({
   providedIn: 'root'

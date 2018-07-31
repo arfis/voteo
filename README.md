@@ -1,6 +1,6 @@
 # Voteo
 
-Voteo is a voting web system build on the nOS blockchain using angular 6 on the frontend. Users can create polls or vote on pools. The created pools have got multiple settings. They can be public or private. When private the user can add wallet addreses which can vote. There are multiple settings which will be possible to set later on. The project is being worked on.
+Voteo is a voting web system build on the nOS blockchain using angular 6 on the frontend. Users can create polls or vote on polls. The created polls have got multiple settings. They can be public or private. When private the user can add wallet addreses which can vote. There are multiple settings which will be possible to set later on. The project is being worked on.
 
 ## Install dependencies
 To run the applicaiton you will need Node. For installing run command `npm install` when in the frontend directory. This will install all the dependencies automatically.
